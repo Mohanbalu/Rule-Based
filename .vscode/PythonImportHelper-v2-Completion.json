@@ -1,0 +1,210 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "knowledge_base",
+        "importPath": "inference_engine",
+        "description": "inference_engine",
+        "isExtraImport": true,
+        "detail": "inference_engine",
+        "documentation": {}
+    },
+    {
+        "label": "diagnose_with_explanation",
+        "importPath": "inference_engine",
+        "description": "inference_engine",
+        "isExtraImport": true,
+        "detail": "inference_engine",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "save_patient_data",
+        "importPath": "patient_module",
+        "description": "patient_module",
+        "isExtraImport": true,
+        "detail": "patient_module",
+        "documentation": {}
+    },
+    {
+        "label": "most_common_diseases",
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "isExtraImport": true,
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "most_common_symptoms",
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "isExtraImport": true,
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "add_rule",
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "isExtraImport": true,
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "update_rule_confidence",
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "isExtraImport": true,
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "delete_rule",
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "isExtraImport": true,
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "add_rule",
+        "kind": 2,
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "peekOfCode": "def add_rule(disease, symptoms, confidence, recommendation):\n    new_rule = {\n        \"disease\": disease,\n        \"symptoms\": symptoms,\n        \"confidence\": confidence,\n        \"recommendation\": recommendation\n    }\n    knowledge_base.append(new_rule)\n    with open('knowledge_base.json', 'w') as file:\n        json.dump(knowledge_base, file, indent=4)",
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "update_rule_confidence",
+        "kind": 2,
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "peekOfCode": "def update_rule_confidence(disease_name, new_confidence):\n    for disease in knowledge_base:\n        if disease[\"disease\"].lower() == disease_name.lower():\n            disease[\"confidence\"] = new_confidence\n    with open('knowledge_base.json', 'w') as file:\n        json.dump(knowledge_base, file, indent=4)\ndef delete_rule(disease_name):\n    global knowledge_base\n    knowledge_base = [d for d in knowledge_base if d[\"disease\"].lower() != disease_name.lower()]\n    with open('knowledge_base.json', 'w') as file:",
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "delete_rule",
+        "kind": 2,
+        "importPath": "admin_module",
+        "description": "admin_module",
+        "peekOfCode": "def delete_rule(disease_name):\n    global knowledge_base\n    knowledge_base = [d for d in knowledge_base if d[\"disease\"].lower() != disease_name.lower()]\n    with open('knowledge_base.json', 'w') as file:\n        json.dump(knowledge_base, file, indent=4)",
+        "detail": "admin_module",
+        "documentation": {}
+    },
+    {
+        "label": "get_patient_data",
+        "kind": 2,
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "peekOfCode": "def get_patient_data():\n    conn = sqlite3.connect(\"patients.db\", check_same_thread=False)\n    try:\n        df = pd.read_sql_query(\"SELECT * FROM patient_history\", conn)\n    except Exception:\n        df = pd.DataFrame()\n    finally:\n        conn.close()\n    return df\ndef most_common_diseases():",
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "most_common_diseases",
+        "kind": 2,
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "peekOfCode": "def most_common_diseases():\n    df = get_patient_data()\n    return df['diagnosis'].value_counts()\ndef most_common_symptoms():\n    df = get_patient_data()\n    all_symptoms = df['symptoms'].str.split(', ')\n    all_symptoms_flat = [sym for sublist in all_symptoms for sym in sublist]\n    return pd.Series(all_symptoms_flat).value_counts()",
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "most_common_symptoms",
+        "kind": 2,
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "peekOfCode": "def most_common_symptoms():\n    df = get_patient_data()\n    all_symptoms = df['symptoms'].str.split(', ')\n    all_symptoms_flat = [sym for sublist in all_symptoms for sym in sublist]\n    return pd.Series(all_symptoms_flat).value_counts()",
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "analytics_module",
+        "description": "analytics_module",
+        "peekOfCode": "conn = sqlite3.connect('patients.db')\ndef get_patient_data():\n    conn = sqlite3.connect(\"patients.db\", check_same_thread=False)\n    try:\n        df = pd.read_sql_query(\"SELECT * FROM patient_history\", conn)\n    except Exception:\n        df = pd.DataFrame()\n    finally:\n        conn.close()\n    return df",
+        "detail": "analytics_module",
+        "documentation": {}
+    },
+    {
+        "label": "match_symptoms_with_explanation",
+        "kind": 2,
+        "importPath": "inference_engine",
+        "description": "inference_engine",
+        "peekOfCode": "def match_symptoms_with_explanation(user_symptoms, disease_entry):\n    disease_symptoms = disease_entry[\"symptoms\"]\n    matched = list(set(user_symptoms) & set(disease_symptoms))\n    if len(user_symptoms) == 0:\n        match_score = 0\n    else:\n        match_score = len(matched) / len(user_symptoms)\n    overall_confidence = match_score * disease_entry[\"confidence\"]\n    return overall_confidence, matched\ndef diagnose_with_explanation(user_symptoms, threshold=0.1, top_n=3):",
+        "detail": "inference_engine",
+        "documentation": {}
+    },
+    {
+        "label": "diagnose_with_explanation",
+        "kind": 2,
+        "importPath": "inference_engine",
+        "description": "inference_engine",
+        "peekOfCode": "def diagnose_with_explanation(user_symptoms, threshold=0.1, top_n=3):\n    results = []\n    for disease in knowledge_base:\n        confidence, matched_symptoms = match_symptoms_with_explanation(user_symptoms, disease)\n        if confidence >= threshold:\n            critical_matched = []\n            if \"critical_symptoms\" in disease:\n                critical_matched = list(set(user_symptoms) & set(disease[\"critical_symptoms\"]))\n            results.append({\n                \"disease\": disease[\"disease\"],",
+        "detail": "inference_engine",
+        "documentation": {}
+    },
+    {
+        "label": "all_symptoms",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "all_symptoms = set()\nfor disease in kb:\n    all_symptoms.update(disease[\"symptoms\"])\nst.set_page_config(page_title=\"Medical Diagnosis System\", layout=\"wide\")\nst.title(\"🩺 Advanced Medical Rule-Based System\")\nuser_type = st.sidebar.radio(\"Select User Type\", [\"Patient\", \"Admin\"])\nif user_type == \"Patient\":\n    st.header(\"Patient Module - Step-by-Step Wizard\")\n    # Initialize session state\n    if \"step\" not in st.session_state:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "user_type",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "user_type = st.sidebar.radio(\"Select User Type\", [\"Patient\", \"Admin\"])\nif user_type == \"Patient\":\n    st.header(\"Patient Module - Step-by-Step Wizard\")\n    # Initialize session state\n    if \"step\" not in st.session_state:\n        st.session_state.step = 1\n    if \"name\" not in st.session_state:\n        st.session_state.name = \"\"\n    if \"age\" not in st.session_state:\n        st.session_state.age = 0",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "save_patient_data",
+        "kind": 2,
+        "importPath": "patient_module",
+        "description": "patient_module",
+        "peekOfCode": "def save_patient_data(name, age, gender, symptoms, results):\n    conn = sqlite3.connect(\"patients.db\", check_same_thread=False)\n    cursor = conn.cursor()\n    cursor.execute('''\n        CREATE TABLE IF NOT EXISTS patients(\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            name TEXT,\n            age INTEGER,\n            gender TEXT,\n            symptoms TEXT,",
+        "detail": "patient_module",
+        "documentation": {}
+    }
+]

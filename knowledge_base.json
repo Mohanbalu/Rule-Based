@@ -1,0 +1,273 @@
+[
+    {
+        "disease": "Flu",
+        "symptoms": [
+            "fever",
+            "cough",
+            "fatigue",
+            "sore_throat",
+            "body_aches"
+        ],
+        "confidence": 0.8,
+        "recommendation": "Rest, fluids, antiviral if severe"
+    },
+    {
+        "disease": "Common Cold",
+        "symptoms": [
+            "sneezing",
+            "runny_nose",
+            "mild_fever",
+            "sore_throat"
+        ],
+        "confidence": 0.7,
+        "recommendation": "Rest, hydration, OTC medications"
+    },
+    {
+        "disease": "COVID-19",
+        "symptoms": [
+            "fever",
+            "cough",
+            "shortness_of_breath",
+            "loss_of_taste_smell"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Isolate, medical consultation, supportive care"
+    },
+    {
+        "disease": "Diabetes Type 2",
+        "symptoms": [
+            "excessive_thirst",
+            "frequent_urination",
+            "fatigue"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Consult doctor, diet, exercise, medication"
+    },
+    {
+        "disease": "Hypertension",
+        "symptoms": [
+            "headache",
+            "dizziness",
+            "nosebleeds"
+        ],
+        "confidence": 0.8,
+        "recommendation": "Lifestyle changes, antihypertensive meds"
+    },
+    {
+        "disease": "Migraine",
+        "symptoms": [
+            "severe_headache",
+            "nausea",
+            "light_sensitivity"
+        ],
+        "confidence": 0.8,
+        "recommendation": "Painkillers, rest, avoid triggers"
+    },
+    {
+        "disease": "Asthma",
+        "symptoms": [
+            "shortness_of_breath",
+            "wheezing",
+            "chest_tightness"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Inhalers, avoid triggers"
+    },
+    {
+        "disease": "Pneumonia",
+        "symptoms": [
+            "fever",
+            "cough",
+            "chest_pain",
+            "difficulty_breathing"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Antibiotics if bacterial, hospital care if severe"
+    },
+    {
+        "disease": "Heart Attack",
+        "symptoms": [
+            "chest_pain",
+            "sweating",
+            "nausea",
+            "shortness_of_breath"
+        ],
+        "confidence": 0.95,
+        "recommendation": "Emergency medical care"
+    },
+    {
+        "disease": "Stroke",
+        "symptoms": [
+            "sudden_numbness",
+            "difficulty_speaking",
+            "vision_problems"
+        ],
+        "confidence": 0.95,
+        "recommendation": "Emergency care, thrombolytics if eligible"
+    },
+    {
+        "disease": "Tuberculosis",
+        "symptoms": [
+            "persistent_cough",
+            "fever",
+            "night_sweats",
+            "weight_loss"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Antibiotic regimen under supervision"
+    },
+    {
+        "disease": "Malaria",
+        "symptoms": [
+            "fever",
+            "chills",
+            "headache",
+            "sweating"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Antimalarial treatment"
+    },
+    {
+        "disease": "Chickenpox",
+        "symptoms": [
+            "fever",
+            "itchy_rash",
+            "fatigue"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Symptom management, antiviral if severe"
+    },
+    {
+        "disease": "Hepatitis B",
+        "symptoms": [
+            "fatigue",
+            "jaundice",
+            "abdominal_pain"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Antiviral therapy, vaccination for prevention"
+    },
+    {
+        "disease": "HIV/AIDS",
+        "symptoms": [
+            "fever",
+            "weight_loss",
+            "recurrent_infections"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Antiretroviral therapy"
+    },
+    {
+        "disease": "Food Poisoning",
+        "symptoms": [
+            "nausea",
+            "vomiting",
+            "diarrhea",
+            "abdominal_cramps"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Hydration, medical care if severe"
+    },
+    {
+        "disease": "Appendicitis",
+        "symptoms": [
+            "abdominal_pain_right_lower",
+            "nausea",
+            "fever"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Surgery (appendectomy)"
+    },
+    {
+        "disease": "Osteoporosis",
+        "symptoms": [
+            "bone_fractures",
+            "back_pain",
+            "loss_of_height"
+        ],
+        "confidence": 0.8,
+        "recommendation": "Calcium & vitamin D, exercise, medications"
+    },
+    {
+        "disease": "Depression",
+        "symptoms": [
+            "persistent_sadness",
+            "loss_of_interest",
+            "fatigue"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Counseling, antidepressants"
+    },
+    {
+        "disease": "Anxiety Disorder",
+        "symptoms": [
+            "excessive_worry",
+            "restlessness",
+            "insomnia"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Therapy, lifestyle changes, medication"
+    },
+    {
+        "disease": "Alzheimer\u00e2\u20ac\u2122s Disease",
+        "symptoms": [
+            "memory_loss",
+            "confusion",
+            "difficulty_performing_tasks"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Medications, cognitive therapy, supportive care"
+    },
+    {
+        "disease": "Parkinson\u00e2\u20ac\u2122s Disease",
+        "symptoms": [
+            "tremors",
+            "stiffness",
+            "slow_movement"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Medications, physical therapy"
+    },
+    {
+        "disease": "Kidney Stones",
+        "symptoms": [
+            "severe_flank_pain",
+            "blood_in_urine",
+            "nausea"
+        ],
+        "confidence": 0.9,
+        "recommendation": "Hydration, pain management, surgery if needed"
+    },
+    {
+        "disease": "Urinary Tract Infection",
+        "symptoms": [
+            "painful_urination",
+            "frequent_urge",
+            "cloudy_urine"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Antibiotics, hydration"
+    },
+    {
+        "disease": "Anemia",
+        "symptoms": [
+            "fatigue",
+            "pale_skin",
+            "shortness_of_breath"
+        ],
+        "confidence": 0.85,
+        "recommendation": "Iron supplements, diet, treat underlying cause"
+    },
+    {
+        "disease": "Cold",
+        "symptoms": [
+            "runny_nose",
+            "sneezing",
+            "sore_throat",
+            "mild_fever",
+            "cough"
+        ],
+        "confidence": 0.73,
+        "recommendation": "Rest, fluids, over-the-counter medications for symptom relief"
+    }
+]
